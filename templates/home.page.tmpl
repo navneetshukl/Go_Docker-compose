@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Beautiful Form with Bootstrap</title>
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      position: relative;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    /* Responsive styles */
+    @media screen and (max-width: 600px) {
+      .container {
+        max-width: 90%;
+      }
+    }
+
+    /* Additional Styles for Users List */
+    .user-list {
+      margin-top: 30px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .user-list-item {
+      background-color: #f7f7f7;
+      border-radius: 4px;
+      padding: 10px 15px;
+      margin-bottom: 10px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .user-list-item span {
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Beautiful Form</h1>
+    <form action="/" method="post">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="Phone" class="form-label">Phone</label>
+        <input class="form-control" id="message" name="phone" placeholder="Your Phone" required></input>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <!-- Users List -->
+    <h2>Users List:</h2>
+    <ul class="user-list">
+      {{range .Users}}
+        <li class="user-list-item">
+          <span>Name:</span> {{.Name}} <br>
+          <span>Email:</span> {{.Email}} <br>
+          <span>Phone:</span> {{.Phone}}
+        </li>
+      {{end}}
+    </ul>
+  </div>
+  </div>
+
+  <!-- Add Bootstrap JS and Popper.js (required for Bootstrap) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.1/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>
